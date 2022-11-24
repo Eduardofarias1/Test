@@ -1,7 +1,4 @@
-  local library = {
-    flags = {}
-  }
-  library.Flags = library.flags
+
   
   --// Dependences --//
   local CoreGui = game:GetService("CoreGui")
@@ -13,7 +10,7 @@
   
   local Mouse = game.Players.LocalPlayer:GetMouse()
   
-  local Utilities = {}
+
 
 
 
