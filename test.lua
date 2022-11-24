@@ -16,7 +16,7 @@
   local Utilities = {}
 
   --// Compatibility //--
-  local request = http and http.request or http_request or request or httprequest
+  local request = syn and syn.request or http and http.request or http_request or request or httprequest
   local getcustomasset = getcustomasset or getsynasset
   local isfolder = isfolder or syn_isfolder or is_folder
   local makefolder = makefolder or make_folder or createfolder or create_folder
@@ -345,8 +345,8 @@ end
     })
   end
 
-  if gethui then
-    gethui(Window)
+  if syn then
+    syn (Window)
     Window.Parent = CoreGui
   elseif gethui then
     Window.Parent = gethui()
