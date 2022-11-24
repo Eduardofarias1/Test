@@ -345,8 +345,9 @@ end
     })
   end
 
-  if syn.protect_gui then
-    syn.protect_gui(Window)
+  if  gethui then
+    Window.Parent = gethui()
+  else
     Window.Parent = CoreGui
   end
 
