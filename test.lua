@@ -1,4 +1,8 @@
-
+  local library = {
+    flags = {}
+  }
+  library.Flags = library.flags
+  
   --// Dependences --//
   local CoreGui = game:GetService("CoreGui")
   local TweenService = game:GetService("TweenService")
@@ -341,12 +345,8 @@ end
     })
   end
 
-  if syn then
-    syn (Window)
-    Window.Parent = CoreGui
-  elseif gethui then
-    Window.Parent = gethui()
-  else
+  if syn.protect_gui then
+    syn.protect_gui(Window)
     Window.Parent = CoreGui
   end
 
