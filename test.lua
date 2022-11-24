@@ -1,8 +1,4 @@
-  local library = {
-    flags = {}
-  }
-  library.Flags = library.flags
-  
+
   --// Dependences --//
   local CoreGui = game:GetService("CoreGui")
   local TweenService = game:GetService("TweenService")
