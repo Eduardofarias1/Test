@@ -16,9 +16,9 @@
   local Utilities = {}
 
   --// Compatibility //--
-
+  local request = http and http.request or http_request or request or httprequest
   local getcustomasset = getcustomasset or getsynasset
-  local isfolder = isfolder or syn_isfolder or is_folder
+  local isfolder = isfolder or is_folder
   local makefolder = makefolder or make_folder or createfolder or create_folder
   --//
 
@@ -345,6 +345,14 @@ end
     })
   end
 
+  if syn.protect_gui then
+    syn.protect_gui(Window)
+    Window.Parent = CoreGui
+  elseif gethui then
+    Window.Parent = gethui()
+  else
+    Window.Parent = CoreGui
+  end
 
   local ResizeButton = Window.Main.Bottom.ResizeIcon.ResizeButton
   local TabContainer = Window.Main.Topbar.TabContainer
